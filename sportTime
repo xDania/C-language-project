@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+  int NOfsteps( int *goalPtr,int *SPtr );
+ 
+      int N,i,goal,S;
+ 
+int main()
+{
+ 
+     printf("Hello There .. Enter Your Goal:\n");
+     scanf("%d",&goal);
+     printf("How Many Steps You Done?!\n");
+     scanf("%d",&S);
+ 
+     int SPtr=&S,goalPtr=&goal;
+ 
+        NOfsteps(&goal,&S);
+     return 0;
+}
+ 
+int NOfsteps( int *goalPtr, int *SPtr){
+ 
+     if(S>=goal){
+       return printf("%d Steps\nWow,You Did Great Job!",S);
+     }
+ 
+ 
+      else if(SPtr<goalPtr){
+         printf("Do You Want To Complete Your Steps?(yes=1 OR no=2)\n");
+         scanf("%d",&i);
+ 
+             if(i==1){
+               printf("You Walked %d,\n%d Steps Left!\n",S,goal-S);
+               printf("How Many Steps You Walked For Now??\n");
+ 
+               scanf("%d",&N);
+               *SPtr+=N;
+               return(NOfsteps(&goal,&S));
+ 
+        }
+             else
+               printf("Ooooops,You Have Not Finished Your Daily Steps!! Try Tomorrow.");
+ 
+     }
+  }
