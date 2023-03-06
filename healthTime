@@ -1,0 +1,80 @@
+#include <stdio.h>
+
+    float W=0.0;
+    float H=0.0;
+
+int main()
+{
+    printf("Hey if you want to know your BMR (Calories) enter '1'\n OR '2' to know your BMI(BODY MASS INDEX)\n"
+            "or 0 to exit\n");
+    float A =0.0;
+    float sum=0.0;
+    int G , ch;
+    scanf("%d",&ch);
+    while (ch != 0)
+     {
+
+    switch(ch){
+    case 1:
+
+    printf("BMR CALC\n ");
+    printf("\nplease enter your gender\n'1' for man\n'2'for woman\n ");
+    scanf("%d",&G);
+    if (G==1){
+    printf("please enter your weight in kg:");
+    scanf("%f",&W);
+    printf("please enter your height in cm:");
+    scanf("%f",&H);
+    printf("please enter your age:");
+    scanf("%f",&A);
+    // BMR =For men:
+     sum=10*W + 6.25*H - 5*A + 5;
+    }
+    else if(G==2){
+    printf("please enter your weight in kg:");
+    scanf("%f",&W);
+    printf("please enter your height in cm:");
+    scanf("%f",&H);
+    printf("please enter your age:");
+    scanf("%f",&A);
+     //BMR = For women:
+     sum=10*W + 6.25*H - 5*A - 161;
+    }
+     printf("BMR =%.2f Calories/day\n",sum);
+     printf("\n%s%39s\n","Activity Level","Calorie");
+     printf("-Sedentary: little or no exercise :%18.2f\n",sum*1.25);
+     printf("-Exercise 1-3 times/week :%27.2f\n",sum*1.375);
+     printf("-Exercise 4-5 times/week :%27.2f\n",sum*1.550);
+     printf("-Intense exercise 6-7 times/week:%20.2f\n",sum*1.725);
+     printf("-Very intense exercise daily,or physical job:%9.2f\n",sum*1.9);
+     break;
+    case 2:
+    printf("BMI CALC\n\nplease enter your weight in kg:");
+    scanf("%f",&W);
+    printf("please enter your height in cm:");
+    scanf("%f",&H);
+       float BMI=0.0;
+       //BMI equation
+          BMI=(W/H/H)*10000;
+           if (BMI<=18.5)
+            printf("BMI=%.2f : Underweight",BMI);
+            else if (BMI<=25)
+            printf("BMI=%.2f : Normal",BMI);
+            else  if(BMI<=30)
+            printf("BMI=%.2f: Overweight",BMI);
+            else
+            printf("BMI=%.2f: Obese , Watch your weight!",BMI);
+            break;
+
+        default:
+        printf("You entered a wrong choice! Try again\n");
+        break;
+    }
+     printf("BMR (Calories) enter '1'\n OR '2' to know your BMI(BODY MASS INDEX)\n"
+        "or 0 to exit\n");
+    scanf("%d",&ch);
+    }
+    while (ch != 0);
+
+     return 0;
+}
