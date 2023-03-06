@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main(){
+char Array[7][5] = {{'C','M','P','T','A'},
+{'T','C','M','A','P'},
+{'A','P','C','T','M'},
+{'M','T','P','A','C'},
+{'P','C','M','P','T'},
+{'T','P','C','M','A'},
+{'C','M','P','A','T'}};
+ 
+int i,j;
+printf("Hi!\nI am here to help you study As long as you need me.\n\nPlease Enter the day ?(to exit please Enter -1.) ");
+scanf("%d",&i);
+while(i!= -1){
+        printf("Please Enter the hour? ");
+        scanf("%d",&j);
+ 
+        while ((j>5)||(i>7)){
+        printf("Wrong Entry!\nPlease Enter the day? ");
+        scanf("%d",&i);
+        printf("Please Enter the hour? ");
+        scanf("%d",&j);
+        }
+ 
+        switch(Array[i-1][j-1]){
+    case 'C':
+        printf("You Should study ");
+        printf("Computer programming.");
+        break;
+    case 'M':
+        printf("You Should study ");
+        printf("Math.");
+        break;
+    case 'P':
+        printf("You Should study ");
+        printf("Physics.");
+        break;
+    case 'T':
+        printf("You Should study ");
+        printf("Information technology.");
+        break;
+    case 'A':
+        printf("You Should study ");
+        printf("Arab.");
+        break;
+        }
+        printf("\n\nPlease Enter the day ?(to exit please Enter -1.) ");
+        scanf("%d",&i);
+  }
+return 0;
+}
